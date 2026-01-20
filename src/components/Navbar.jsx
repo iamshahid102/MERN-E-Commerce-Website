@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="w-[60%] relative h-full flex flex-row-reverse items-center justify-end gap-2  sm:gap-8 sm:w-[45%]">
         <ul
           className={`bg-gray-200 w-100 absolute ${
-            toggle ? "-left-200" : "-left-2"
+            toggle ? "-left-2" : "-left-200"
           } top-10 p-8 z-10 duration-200 ease-in-out sm:static sm:w-full sm:bg-transparent sm:flex sm:justify-start sm:items-center sm:gap-8 sm:p-0`}
         >
           <li>
