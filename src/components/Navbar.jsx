@@ -6,6 +6,13 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [searchToggle, setSearchToggle] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+
+  // Handle Search Input Function
+  const handleSearchInput = (e) => {
+    setSearchInput(e.target.value)
+  };
 
   return (
     <nav className="w-full h-10 flex justify-between items-center px-2 sm:h-20 sm:px-20">
@@ -50,15 +57,24 @@ const Navbar = () => {
           <label
             className="text-2xl cursor-pointer absolute top-5.6 right-10 sm:left-2.5 "
             htmlFor="search-product"
+            onClick={() => setSearchToggle(!searchToggle)}
           >
             <IoSearch />
           </label>
           <input
-            className="w-full hidden bg-gray-100 rounded-3xl py-2 pl-10 placeholder:text-gray-400 sm:block"
+            className={`w-full ${searchToggle ? "block" : "hidden"} bg-gray-100 border rounded-3xl py-2 pl-10 placeholder:text-gray-400 sm:block`}
             type="text"
             placeholder="Search for products..."
             id="search-product"
+            value={searchInput}
+            onChange={handleSearchInput}
           />
+          {/* search-products */}
+          <div
+            className={`${searchInput.trim() ? "block" : "hidden"} w-full h-50 z-10 bg-gray-200 absolute top-17 left-0 rounded-2xl `}
+          >
+            <ul></ul>
+          </div>
         </div>
 
         <div className="w-[15%] h-full flex justify-end items-center gap-2 text-2xl">
