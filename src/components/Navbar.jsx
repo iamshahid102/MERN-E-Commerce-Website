@@ -62,7 +62,7 @@ const Navbar = () => {
             <IoSearch />
           </label>
           <input
-            className={`w-full ${searchToggle ? "block" : "hidden"} bg-gray-100 border rounded-3xl py-2 pl-10 placeholder:text-gray-400 sm:block`}
+            className={`w-full ${searchToggle ? "block " : "hidden"} bg-gray-100 border rounded-3xl py-2 pl-10 placeholder:text-gray-400 sm:block`}
             type="text"
             placeholder="Search for products..."
             id="search-product"
